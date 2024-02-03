@@ -34,6 +34,8 @@ public class Product {
             }
         }
 
+        setProductCode(productCode);
+        this.unitCost=unitCost;
         this.inCurrentProductLine=inCurrentProductLine;
     }
 
