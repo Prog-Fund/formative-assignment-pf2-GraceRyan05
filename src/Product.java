@@ -24,6 +24,7 @@ public class Product {
      */
     public Product(String productName, int productCode, double unitCost, boolean inCurrentProductLine) {
 
+        setProductCode(productCode);
 
         //productName validation (only store first 20 characters)
         if (productName != null) {
@@ -34,8 +35,7 @@ public class Product {
             }
         }
 
-        setProductCode(productCode);
-        this.unitCost=unitCost;
+        setUnitCost(unitCost);
         this.inCurrentProductLine=inCurrentProductLine;
     }
 
@@ -103,7 +103,7 @@ public class Product {
      */
     //unitCost validation
     public void setUnitCost(double unitCost) {
-        if (unitCost > 0) {
+        if ((unitCost > 0) && (unitCost <=99999)) {
             this.unitCost = unitCost;
         }
     }
@@ -126,7 +126,7 @@ public class Product {
     //  "Product description: Flat screen TV  product code: 2000  unit cost: 1000 and currently in product line: Y"
 
     {
-        return "Product description: " + productName + " product code: " + productCode + " unit cost: " + unitCost + " currently in product line: " + (inCurrentProductLine ? 'Y' : 'N');
+        return "Product description: " + productName + ", product code: " + productCode + ", unit cost: " + unitCost + ", currently in product line: " + (inCurrentProductLine ? 'Y' : 'N');
     }
 
 }
